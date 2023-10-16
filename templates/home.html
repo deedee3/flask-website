@@ -20,16 +20,18 @@
       h2 {
         text-align: center;
         font-size: 32px;
-        font-style: italic;
+        font-style: bold;
+        font-family: Roboto;
       }
 
       .bodytext {
         font-family: Roboto;
         color: rgb(80,80,80);
+        text-align: center;
       }
 
       #container1 {
-        max-width: 720px;
+        max-width: 1500px;
         margin: 0 auto 0 auto;
       }
 
@@ -44,10 +46,14 @@
     <div class="container" id="container1">
     <h1>Jovian Careers</h1>
     <img class="img-fluid" id="banner" src="https://flask-website--kushalbhandari9.repl.co/static/image.avif" width=800 height=500>
-    <h2>About Jovian</h2>
-    <p class=bodytext>Lorem Ipsum kasdfa asdf a s fd sa f e ce a g e ce</p>
+    <h2 class="mt-4">About Jovian</h2>
+    <p class=bodytext>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <h2>Open Positions</h2>
-    <p>TODO - Show the jobs here</p>
+    <p>
+      {% for job in jobs %}
+        {% include 'jobitem.html' %}
+      {% endfor %}
+    </p>
     <div id=button>
       <button class="btn btn-primary btn-lg">Contact Us</button>
     </div>
